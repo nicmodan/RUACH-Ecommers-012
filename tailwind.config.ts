@@ -1,13 +1,13 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
+  darkMode: "class", // Enables dark mode with class strategy
   content: [
     "./pages/**/*.{ts,tsx,jsx,mdx}",
     "./components/**/*.{ts,tsx,jsx,mdx}",
     "./app/**/*.{ts,tsx,jsx,mdx}",
     "./src/**/*.{ts,tsx,jsx,mdx}",
-    // ✅ Removed `./**/*` to prevent scanning `node_modules` for performance
+    // ✅ Removed `./**/*` to avoid scanning node_modules for performance reasons
   ],
   theme: {
     container: {
