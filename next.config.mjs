@@ -1,14 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Ignore ESLint and TypeScript errors during builds
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
+
+  // Enable server actions (experimental feature)
   experimental: {
     serverActions: true,
   },
+
+  // Optimize build for low-resource environments
+  output: 'export', // Ensures static export (no Node server required)
+
+  // Custom Webpack config to avoid unsupported Node APIs
   webpack: (config) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
@@ -20,7 +28,13 @@ const nextConfig = {
     };
     return config;
   },
+
+  // Disable source maps in production to save memory
+  productionBrowserSourceMaps: false,
+
+  // Optimize images
   images: {
+    unoptimized: true, // Required for `next export` (no Image Optimization server)
     domains: [
       'images.unsplash.com',
       'plus.unsplash.com',
