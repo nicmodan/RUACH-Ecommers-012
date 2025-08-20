@@ -3,11 +3,11 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   darkMode: "class",
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-    "./**/*.{js,ts,jsx,tsx,mdx}", // ✅ Added recursive support
+    "./pages/**/*.{ts,tsx,jsx,mdx}",
+    "./components/**/*.{ts,tsx,jsx,mdx}",
+    "./app/**/*.{ts,tsx,jsx,mdx}",
+    "./src/**/*.{ts,tsx,jsx,mdx}",
+    // ✅ Removed `./**/*` to prevent scanning `node_modules` for performance
   ],
   theme: {
     container: {
