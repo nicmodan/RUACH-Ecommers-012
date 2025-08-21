@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
-  "scripts": {
+  "scripts": { 
     "build": "npm run tailwind:build && next build",
     "dev": "npm run tailwind:build && next dev",
     "dev:with-styles": "npm run tailwind:build && next dev",
